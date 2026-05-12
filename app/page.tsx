@@ -34,54 +34,59 @@ export default function Home() {
 
   return (
     <main className="page">
-
-      {/* Moving promo bar */}
-      <div className="promo-bar">
-<div className="ticker-text">
-  ✈ LIMITED TIME FLIGHT DEALS ✈
-  ONLY 1 ROOM LEFT ✈ 70% OFF ✈
-  BOOK NOW ✈ FREE BREAKFAST ✈
-</div>
-      </div>
-
-      {/* Popup */}
-      <div className="popup">
-        <h2>🏝 ONLY 1 ROOM LEFT!</h2>
-
+      {/* Promo section - static */}
+      <section className="promo-banner">
         <p>
-          Book your dream vacation before
-          prices increase.
+          Limited-time travel deals • Free breakfast on selected
+          packages • Special seasonal discounts available
         </p>
+      </section>
 
-        <button>
-          BOOK NOW
-        </button>
-      </div>
+      {/* Booking section */}
+      <section className="booking-section">
+        <div className="booking-widget">
+          <h2>Quick Booking</h2>
 
-      {/* Floating booking widget */}
-      <div className="booking-widget">
-        <h3>Quick Booking</h3>
+          <label htmlFor="destination">
+            Destination
+          </label>
+          <input
+            id="destination"
+            placeholder="Enter destination"
+          />
 
-        <input placeholder="Destination" />
-        <input placeholder="Check-in" />
-        <input placeholder="Check-out" />
+          <label htmlFor="checkin">
+            Check-in date
+          </label>
+          <input
+            id="checkin"
+            type="date"
+          />
 
-        <button>
-          SEARCH
-        </button>
-      </div>
+          <label htmlFor="checkout">
+            Check-out date
+          </label>
+          <input
+            id="checkout"
+            type="date"
+          />
 
-      {/* Hero section */}
+          <button>
+            Search Packages
+          </button>
+        </div>
+      </section>
+
+      {/* Hero */}
       <section className="hero">
-
         <div className="overlay" />
 
-        {/* autoplay video */}
+        {/* Accessible video */}
         <video
-          autoPlay
-          loop
-          muted
           className="hero-video"
+          controls
+          muted
+          aria-label="Travel destination video"
         >
           <source
             src="https://www.w3schools.com/howto/rain.mp4"
@@ -94,10 +99,11 @@ export default function Home() {
             Dream Paradise Tours
           </h1>
 
-          <p>
+          <p className="readable-text">
             Explore luxury destinations,
-            exclusive hotels and dream
-            vacations.
+            exclusive hotels, and carefully
+            curated travel experiences designed
+            for comfort and relaxation.
           </p>
 
           <button className="hero-btn">
@@ -106,118 +112,127 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured destinations */}
+      {/* Destinations */}
       <section className="section">
-
         <h2 className="section-title">
           Popular Destinations
         </h2>
 
         <div className="grid">
           {destinations.map((place, index) => (
-            <div
+            <article
               key={index}
               className="travel-card"
             >
-              <div className="offer-badge">
-                70% OFF
-              </div>
+              <span className="offer-badge">
+                Special Offer
+              </span>
 
               <h3>{place.name}</h3>
 
-              <p>{place.desc}</p>
+              <p className="readable-text">
+                {place.desc}
+              </p>
 
               <span className="price">
                 {place.price}
               </span>
 
               <button className="book-btn">
-                BOOK
+                Book Package
               </button>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* Flash sale cards */}
+      {/* Deals */}
       <section className="offers">
-
         <h2 className="section-title">
-          Last Minute Deals
+          Travel Deals
         </h2>
 
         <div className="offer-grid">
-
-          <div className="offer-card pulse">
-            <h3>Maldives Flash Sale</h3>
-            <p>
-              Save 65% if booked in
-              the next 30 minutes.
+          <article className="offer-card">
+            <h3>Maldives Resort Deal</h3>
+            <p className="readable-text">
+              Save on selected bookings
+              during this season.
             </p>
-          </div>
+          </article>
 
-          <div className="offer-card">
+          <article className="offer-card">
             <h3>Tokyo Luxury Stay</h3>
-            <p>
-              Limited hotel rooms left.
+            <p className="readable-text">
+              Explore premium hotels
+              and exclusive experiences.
             </p>
-          </div>
+          </article>
 
-          <div className="offer-card pulse">
+          <article className="offer-card">
             <h3>Dubai VIP Package</h3>
-            <p>
-              Free breakfast and
-              airport pickup.
+            <p className="readable-text">
+              Includes breakfast and
+              airport pickup options.
             </p>
-          </div>
-
+          </article>
         </div>
       </section>
 
       {/* Testimonials */}
       <section className="testimonials">
-
         <h2 className="section-title">
           Traveler Reviews
         </h2>
 
         <div className="testimonial-card">
-          ⭐⭐⭐⭐⭐ Amazing vacation!
-          Beautiful hotel and beaches.
+          <p className="readable-text">
+            “Amazing vacation experience.
+            Beautiful hotel and relaxing
+            atmosphere.”
+          </p>
         </div>
 
         <div className="testimonial-card">
-          ⭐⭐⭐⭐⭐ Best booking
-          experience ever.
+          <p className="readable-text">
+            “Smooth booking process and
+            excellent customer support.”
+          </p>
         </div>
 
-        <div className="testimonial-card pulse">
-          ⭐⭐⭐⭐⭐ Luxury experience!
+        <div className="testimonial-card">
+          <p className="readable-text">
+            “Comfortable and memorable
+            travel experience.”
+          </p>
         </div>
-
       </section>
 
       {/* Newsletter */}
       <section className="newsletter">
-
         <h2>
           Get Travel Deals
         </h2>
 
-        <p>
-          Receive exclusive flight
-          discounts every week.
+        <p className="readable-text">
+          Receive travel discounts and
+          seasonal offers by email.
         </p>
 
+        <label htmlFor="email">
+          Email Address
+        </label>
+
         <input
-          placeholder="Enter Email"
+          id="email"
+          type="email"
+          placeholder="Enter email"
           className="email"
         />
 
         <button>
           Subscribe
         </button>
-
       </section>
 
       <footer className="footer">

@@ -1,11 +1,9 @@
-/* app/globals.css */
-
 :root {
-  --gold: #f4c430;
-  --blue: #0f3460;
-  --darkBlue: #081b33;
-  --lightBlue: #4ea8de;
-  --white: #ffffff;
+  --gold: #d4af37;
+  --blue: #234e70;
+  --darkBlue: #102a43;
+  --lightBlue: #5b8db8;
+  --white: #f5f7fa;
 }
 
 * {
@@ -18,160 +16,82 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: Arial, sans-serif;
-  background: #081b33;
-  color: white;
+  background: #102a43;
+  color: #f5f7fa;
+  line-height: 1.6;
 }
 
 body {
   background: linear-gradient(
     180deg,
-    #081b33,
-    #102a43
+    #102a43,
+    #16324f
   );
 }
 
-/* animations */
+/* readable text */
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.04);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+.readable-text {
+  max-width: 65ch;
+  margin-inline: auto;
+  line-height: 1.8;
+  font-size: 16px;
 }
 
-@keyframes slideTicker {
-  from {
-    transform: translateX(100%);
-  }
+/* promo banner */
 
-  to {
-    transform: translateX(-100%);
-  }
+.promo-banner {
+  background: #234e70;
+  padding: 16px;
+  text-align: center;
+  font-size: 16px;
 }
 
-@keyframes floatWidget {
-  0% {
-    transform: translateY(0);
-  }
+/* booking section */
 
-  50% {
-    transform: translateY(-8px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+.booking-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
 }
-
-/* top moving promo bar */
-
-.promo-bar {
-  background: linear-gradient(
-    90deg,
-    #0f3460,
-    #4ea8de,
-    #0f3460
-  );
-
-  padding: 12px 0;
-  overflow: hidden;
-  border-bottom: 2px solid gold;
-}
-
-.promo-bar marquee {
-  font-size: 14px;
-  color: white;
-  font-weight: bold;
-}
-
-/* popup */
-
-.popup {
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  width: 280px;
-
-  background: rgba(0, 0, 0, 0.9);
-  border: 3px solid gold;
-
-  padding: 20px;
-  border-radius: 12px;
-
-  z-index: 999;
-  box-shadow: 0 0 20px rgba(244, 196, 48, 0.5);
-}
-
-.popup h2 {
-  margin-top: 0;
-  color: gold;
-}
-
-.popup p {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.popup button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-
-  background: gold;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* floating booking widget */
 
 .booking-widget {
-  position: fixed;
-  left: 20px;
-  top: 100px;
-
-  width: 260px;
-  background: rgba(0, 0, 0, 0.88);
-
-  padding: 20px;
-  border-radius: 15px;
-
-  z-index: 999;
-  border: 2px solid #4ea8de;
-
-  animation: floatWidget 3s ease-in-out infinite;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255,255,255,0.08);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
-.booking-widget h3 {
+.booking-widget h2 {
   margin-top: 0;
+}
+
+.booking-widget label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 16px;
 }
 
 .booking-widget input {
   width: 100%;
-  margin-bottom: 10px;
+  min-height: 44px;
   padding: 12px;
-
   border-radius: 8px;
   border: none;
+  font-size: 16px;
 }
 
 .booking-widget button {
   width: 100%;
-  padding: 12px;
-
+  min-height: 48px;
+  margin-top: 20px;
   border: none;
-  border-radius: 8px;
-
-  background: #4ea8de;
+  border-radius: 10px;
+  background: var(--lightBlue);
   color: white;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -179,72 +99,63 @@ body {
 
 .hero {
   position: relative;
-  height: 90vh;
-  overflow: hidden;
-
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 20px;
 }
 
 .hero-video {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 900px;
+  border-radius: 18px;
 }
 
 .overlay {
-  position: absolute;
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.45);
+  display: none;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 5;
   text-align: center;
-  max-width: 700px;
+  max-width: 720px;
   padding: 20px;
 }
 
 .hero-content h1 {
-  font-size: 64px;
-  margin-bottom: 20px;
-  color: gold;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--gold);
 }
 
 .hero-content p {
-  font-size: 20px;
-  line-height: 1.7;
+  font-size: 18px;
 }
 
 .hero-btn {
-  margin-top: 20px;
-  padding: 16px 28px;
-
+  min-height: 48px;
+  padding: 14px 28px;
   border: none;
   border-radius: 10px;
-
-  background: gold;
+  background: var(--gold);
   color: black;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
 }
 
-/* section */
+/* sections */
 
-.section {
-  padding: 80px 60px;
+.section,
+.offers,
+.testimonials,
+.newsletter {
+  padding: 64px 20px;
 }
 
 .section-title {
   text-align: center;
-  font-size: 40px;
+  font-size: 36px;
   margin-bottom: 40px;
-  color: gold;
+  color: var(--gold);
 }
 
 /* cards */
@@ -253,144 +164,82 @@ body {
   display: grid;
   grid-template-columns:
     repeat(auto-fit, minmax(280px, 1fr));
-
-  gap: 25px;
+  gap: 24px;
 }
 
-.travel-card {
+.travel-card,
+.offer-card,
+.testimonial-card {
   background: rgba(255,255,255,0.08);
-
-  border-radius: 18px;
+  border-radius: 16px;
   padding: 24px;
-
   border: 1px solid rgba(255,255,255,0.15);
-
-  transition: transform 0.3s ease;
-}
-
-.travel-card:hover {
-  transform: translateY(-8px);
 }
 
 .offer-badge {
   display: inline-block;
-
-  background: gold;
+  background: var(--gold);
   color: black;
-
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.travel-card h3 {
-  margin-top: 18px;
-  font-size: 24px;
-}
-
-.travel-card p {
-  line-height: 1.6;
+  font-size: 14px;
 }
 
 .price {
   display: block;
-  margin-top: 15px;
-
-  font-size: 28px;
-  color: gold;
+  margin-top: 16px;
+  font-size: 24px;
+  color: var(--gold);
   font-weight: bold;
 }
 
 .book-btn {
-  margin-top: 18px;
-
   width: 100%;
-  padding: 14px;
-
+  min-height: 48px;
+  margin-top: 18px;
   border: none;
   border-radius: 10px;
-
-  background: #4ea8de;
+  background: var(--lightBlue);
   color: white;
   cursor: pointer;
-}
-
-/* offer cards */
-
-.offers {
-  padding: 60px;
-}
-
-.offer-grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.offer-card {
-  flex: 1;
-  min-width: 250px;
-
-  background: rgba(255,255,255,0.08);
-  padding: 25px;
-
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.pulse {
-  animation: pulse 1s infinite;
-}
-
-/* testimonials */
-
-.testimonials {
-  padding: 70px 60px;
-}
-
-.testimonial-card {
-  background: rgba(255,255,255,0.08);
-  margin-bottom: 20px;
-
-  padding: 20px;
-  border-radius: 12px;
 }
 
 /* newsletter */
 
 .newsletter {
   text-align: center;
-  padding: 80px 20px;
+}
+
+.newsletter label {
+  display: block;
+  margin-bottom: 8px;
 }
 
 .email {
-  width: 300px;
+  width: 320px;
   max-width: 90%;
-
-  padding: 14px;
+  min-height: 44px;
+  padding: 12px;
   border-radius: 8px;
   border: none;
-
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .newsletter button {
+  min-height: 48px;
   padding: 14px 24px;
-  margin-left: 10px;
-
+  margin-top: 16px;
   border: none;
   border-radius: 8px;
-
-  background: gold;
+  background: var(--gold);
   color: black;
-  font-weight: bold;
+  cursor: pointer;
 }
 
 /* footer */
 
 .footer {
-  background: #061220;
+  background: #0b1d2d;
   text-align: center;
   padding: 30px;
   margin-top: 50px;
@@ -403,16 +252,7 @@ body {
     font-size: 40px;
   }
 
-  .booking-widget {
-    display: none;
-  }
-
-  .popup {
-    width: 90%;
-    right: 5%;
-  }
-
-  .section {
-    padding: 40px 20px;
+  .section-title {
+    font-size: 28px;
   }
 }
