@@ -1,13 +1,22 @@
+/* app/globals.css */
+
 :root {
-  --gold: #d4af37;
-  --blue: #234e70;
-  --darkBlue: #102a43;
-  --lightBlue: #5b8db8;
-  --white: #f5f7fa;
+  --bg-primary: #1f3550;
+  --bg-secondary: #2b4766;
+  --card-bg: #38526d;
+  --text-primary: #e7edf3;
+  --text-secondary: #d2dae3;
+  --accent: #b89b5e;
+  --button: #54789d;
+  --border: rgba(255, 255, 255, 0.14);
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
 }
 
 html,
@@ -16,70 +25,130 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: Arial, sans-serif;
-  background: #102a43;
-  color: #f5f7fa;
-  line-height: 1.6;
+
+  background: #1f3550;
+  color: var(--text-primary);
+
+  line-height: 1.7;
 }
 
-body {
-  background: linear-gradient(
-    180deg,
-    #102a43,
-    #16324f
-  );
-}
+/* ---------- ACCESSIBLE TEXT ---------- */
 
-/* readable text */
+p,
+span,
+label,
+button,
+input {
+  font-size: 16px;
+  line-height: 1.7;
+}
 
 .readable-text {
-  max-width: 65ch;
+  max-width: 60ch;
   margin-inline: auto;
   line-height: 1.8;
-  font-size: 16px;
 }
 
-/* promo banner */
+/* ---------- PROMO BANNER ---------- */
 
 .promo-banner {
-  background: #234e70;
-  padding: 16px;
+  background: var(--bg-secondary);
+  padding: 18px 20px;
   text-align: center;
+}
+
+.promo-banner p {
+  margin: 0 auto;
+  max-width: 60ch;
   font-size: 16px;
 }
 
-/* booking section */
+/* ---------- HERO ---------- */
+
+.hero {
+  padding: 64px 20px;
+  text-align: center;
+}
+
+.hero-video {
+  width: 100%;
+  max-width: 820px;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto 32px;
+}
+
+.hero-content {
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  max-width: 60ch;
+  margin: 0 auto;
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.hero-btn {
+  margin-top: 24px;
+  min-height: 48px;
+  min-width: 180px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  background: var(--button);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ---------- BOOKING ---------- */
 
 .booking-section {
+  padding: 48px 20px;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
 }
 
 .booking-widget {
   width: 100%;
   max-width: 420px;
-  background: rgba(255,255,255,0.08);
-  padding: 24px;
+
+  background: var(--card-bg);
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.15);
+  padding: 24px;
+  border: 1px solid var(--border);
 }
 
 .booking-widget h2 {
+  font-size: 28px;
   margin-top: 0;
 }
 
 .booking-widget label {
   display: block;
-  margin-bottom: 8px;
   margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 16px;
 }
 
 .booking-widget input {
   width: 100%;
-  min-height: 44px;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
+  min-height: 48px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+
+  background: #dfe6ec;
+  color: #2f3f50;
+
   font-size: 16px;
 }
 
@@ -87,62 +156,18 @@ body {
   width: 100%;
   min-height: 48px;
   margin-top: 20px;
+
   border: none;
   border-radius: 10px;
-  background: var(--lightBlue);
-  color: white;
-  font-size: 16px;
+
+  background: var(--button);
+  color: var(--text-primary);
+
   cursor: pointer;
-}
-
-/* hero */
-
-.hero {
-  position: relative;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-}
-
-.hero-video {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 18px;
-}
-
-.overlay {
-  display: none;
-}
-
-.hero-content {
-  text-align: center;
-  max-width: 720px;
-  padding: 20px;
-}
-
-.hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  color: var(--gold);
-}
-
-.hero-content p {
-  font-size: 18px;
-}
-
-.hero-btn {
-  min-height: 48px;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 10px;
-  background: var(--gold);
-  color: black;
   font-size: 16px;
-  cursor: pointer;
 }
 
-/* sections */
+/* ---------- SECTION ---------- */
 
 .section,
 .offers,
@@ -153,12 +178,12 @@ body {
 
 .section-title {
   text-align: center;
-  font-size: 36px;
+  font-size: 34px;
   margin-bottom: 40px;
-  color: var(--gold);
+  color: var(--accent);
 }
 
-/* cards */
+/* ---------- GRID ---------- */
 
 .grid {
   display: grid;
@@ -167,85 +192,125 @@ body {
   gap: 24px;
 }
 
+/* ---------- CARDS ---------- */
+
 .travel-card,
 .offer-card,
 .testimonial-card {
-  background: rgba(255,255,255,0.08);
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 24px;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid var(--border);
+}
+
+.travel-card h3,
+.offer-card h3 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.travel-card p,
+.offer-card p,
+.testimonial-card p {
+  max-width: 60ch;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
 }
 
 .offer-badge {
   display: inline-block;
-  background: var(--gold);
-  color: black;
   padding: 8px 14px;
   border-radius: 20px;
-  font-size: 14px;
+
+  background: #9d8654;
+  color: #1e2d3f;
+
+  font-size: 16px;
 }
 
 .price {
   display: block;
   margin-top: 16px;
+
   font-size: 24px;
-  color: var(--gold);
-  font-weight: bold;
+  color: #d3bd84;
 }
 
 .book-btn {
   width: 100%;
   min-height: 48px;
+
   margin-top: 18px;
   border: none;
   border-radius: 10px;
-  background: var(--lightBlue);
-  color: white;
+
+  background: var(--button);
+  color: var(--text-primary);
+
   cursor: pointer;
+  font-size: 16px;
 }
 
-/* newsletter */
+/* ---------- NEWSLETTER ---------- */
 
 .newsletter {
   text-align: center;
 }
 
+.newsletter p {
+  max-width: 60ch;
+  margin: 0 auto 24px;
+}
+
 .newsletter label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .email {
   width: 320px;
   max-width: 90%;
-  min-height: 44px;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  margin-top: 12px;
+  min-height: 48px;
+  padding: 14px;
+
+  border-radius: 10px;
+  border: 1px solid var(--border);
+
+  background: #dfe6ec;
+  color: #2f3f50;
+
+  font-size: 16px;
 }
 
 .newsletter button {
+  display: block;
+  margin: 20px auto 0;
+
   min-height: 48px;
+  min-width: 180px;
+
   padding: 14px 24px;
-  margin-top: 16px;
   border: none;
-  border-radius: 8px;
-  background: var(--gold);
-  color: black;
+  border-radius: 10px;
+
+  background: var(--button);
+  color: var(--text-primary);
+
   cursor: pointer;
+  font-size: 16px;
 }
 
-/* footer */
+/* ---------- FOOTER ---------- */
 
 .footer {
-  background: #0b1d2d;
+  background: #24384f;
   text-align: center;
-  padding: 30px;
-  margin-top: 50px;
+  padding: 32px 20px;
+  font-size: 16px;
 }
 
-/* mobile */
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 768px) {
   .hero-content h1 {

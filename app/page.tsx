@@ -3,95 +3,113 @@ export default function Home() {
     {
       name: "Maldives Escape",
       price: "$799",
-      desc: "Luxury beach resort with ocean view.",
+      desc:
+        "Luxury beach resort with ocean view and relaxing surroundings.",
     },
     {
       name: "Bali Paradise",
       price: "$499",
-      desc: "Tropical adventure with spa package.",
+      desc:
+        "Tropical getaway with wellness activities and spa options.",
     },
     {
       name: "Swiss Alps",
       price: "$999",
-      desc: "Mountain retreat and skiing package.",
+      desc:
+        "Mountain retreat featuring scenic landscapes and skiing.",
     },
     {
       name: "Dubai Luxury",
       price: "$699",
-      desc: "5-star hotel and city experience.",
+      desc:
+        "Premium hotel experience with city attractions included.",
     },
     {
       name: "Tokyo Explorer",
       price: "$899",
-      desc: "Modern city lights and culture.",
+      desc:
+        "Experience modern city culture, shopping, and landmarks.",
     },
     {
       name: "Paris Romance",
       price: "$849",
-      desc: "Romantic city getaway package.",
+      desc:
+        "Relaxing city getaway with cultural attractions and dining.",
     },
   ];
 
   return (
     <main className="page">
-      {/* Promo section - static */}
+      {/* Static promo banner */}
       <section className="promo-banner">
-        <p>
-          Limited-time travel deals • Free breakfast on selected
-          packages • Special seasonal discounts available
+        <p className="readable-text">
+          Explore seasonal travel offers with selected hotel benefits,
+          complimentary breakfast options, and limited-time destination
+          discounts.
         </p>
       </section>
 
       {/* Booking section */}
       <section className="booking-section">
-        <div className="booking-widget">
-          <h2>Quick Booking</h2>
+        <div
+          className="booking-widget"
+          aria-labelledby="booking-title"
+        >
+          <h2 id="booking-title">
+            Quick Booking
+          </h2>
 
           <label htmlFor="destination">
             Destination
           </label>
+
           <input
             id="destination"
+            type="text"
             placeholder="Enter destination"
+            aria-label="Destination"
           />
 
           <label htmlFor="checkin">
             Check-in date
           </label>
+
           <input
             id="checkin"
             type="date"
+            aria-label="Check-in date"
           />
 
           <label htmlFor="checkout">
             Check-out date
           </label>
+
           <input
             id="checkout"
             type="date"
+            aria-label="Check-out date"
           />
 
-          <button>
-            Search Packages
+          <button type="button">
+            Search packages
           </button>
         </div>
       </section>
 
-      {/* Hero */}
+      {/* Hero section */}
       <section className="hero">
-        <div className="overlay" />
-
-        {/* Accessible video */}
         <video
-          className="hero-video"
           controls
           muted
-          aria-label="Travel destination video"
+          preload="metadata"
+          className="hero-video"
+          aria-label="Travel destination preview video"
         >
           <source
             src="https://www.w3schools.com/howto/rain.mp4"
             type="video/mp4"
           />
+          Your browser does not support video playback.
         </video>
 
         <div className="hero-content">
@@ -100,21 +118,29 @@ export default function Home() {
           </h1>
 
           <p className="readable-text">
-            Explore luxury destinations,
-            exclusive hotels, and carefully
-            curated travel experiences designed
-            for comfort and relaxation.
+            Discover relaxing destinations, premium hotels,
+            and carefully selected travel experiences designed
+            for comfort and memorable experiences.
           </p>
 
-          <button className="hero-btn">
-            Explore Packages
+          <button
+            type="button"
+            className="hero-btn"
+          >
+            Explore packages
           </button>
         </div>
       </section>
 
-      {/* Destinations */}
-      <section className="section">
-        <h2 className="section-title">
+      {/* Featured destinations */}
+      <section
+        className="section"
+        aria-labelledby="destinations-title"
+      >
+        <h2
+          id="destinations-title"
+          className="section-title"
+        >
           Popular Destinations
         </h2>
 
@@ -125,10 +151,12 @@ export default function Home() {
               className="travel-card"
             >
               <span className="offer-badge">
-                Special Offer
+                Special offer
               </span>
 
-              <h3>{place.name}</h3>
+              <h3>
+                {place.name}
+              </h3>
 
               <p className="readable-text">
                 {place.desc}
@@ -138,99 +166,127 @@ export default function Home() {
                 {place.price}
               </span>
 
-              <button className="book-btn">
-                Book Package
+              <button
+                type="button"
+                className="book-btn"
+              >
+                Book package
               </button>
             </article>
           ))}
         </div>
       </section>
 
-      {/* Deals */}
-      <section className="offers">
-        <h2 className="section-title">
+      {/* Travel deals */}
+      <section
+        className="offers"
+        aria-labelledby="deals-title"
+      >
+        <h2
+          id="deals-title"
+          className="section-title"
+        >
           Travel Deals
         </h2>
 
         <div className="offer-grid">
           <article className="offer-card">
-            <h3>Maldives Resort Deal</h3>
+            <h3>
+              Maldives Resort Package
+            </h3>
+
             <p className="readable-text">
-              Save on selected bookings
-              during this season.
+              Enjoy selected seasonal savings for
+              beach resort stays and premium amenities.
             </p>
           </article>
 
           <article className="offer-card">
-            <h3>Tokyo Luxury Stay</h3>
+            <h3>
+              Tokyo Luxury Stay
+            </h3>
+
             <p className="readable-text">
-              Explore premium hotels
-              and exclusive experiences.
+              Explore premium accommodations and
+              carefully selected travel experiences.
             </p>
           </article>
 
           <article className="offer-card">
-            <h3>Dubai VIP Package</h3>
+            <h3>
+              Dubai Premium Package
+            </h3>
+
             <p className="readable-text">
-              Includes breakfast and
-              airport pickup options.
+              Includes hotel accommodation and
+              optional airport transfer services.
             </p>
           </article>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="testimonials">
-        <h2 className="section-title">
+      <section
+        className="testimonials"
+        aria-labelledby="reviews-title"
+      >
+        <h2
+          id="reviews-title"
+          className="section-title"
+        >
           Traveler Reviews
         </h2>
 
-        <div className="testimonial-card">
+        <article className="testimonial-card">
           <p className="readable-text">
-            “Amazing vacation experience.
-            Beautiful hotel and relaxing
-            atmosphere.”
+            “The hotel experience was relaxing,
+            comfortable, and thoughtfully organized.”
           </p>
-        </div>
+        </article>
 
-        <div className="testimonial-card">
+        <article className="testimonial-card">
           <p className="readable-text">
-            “Smooth booking process and
-            excellent customer support.”
+            “Booking was simple and the overall
+            experience felt smooth and stress-free.”
           </p>
-        </div>
+        </article>
 
-        <div className="testimonial-card">
+        <article className="testimonial-card">
           <p className="readable-text">
-            “Comfortable and memorable
-            travel experience.”
+            “A memorable vacation with excellent
+            accommodation and helpful service.”
           </p>
-        </div>
+        </article>
       </section>
 
       {/* Newsletter */}
-      <section className="newsletter">
-        <h2>
+      <section
+        className="newsletter"
+        aria-labelledby="newsletter-title"
+      >
+        <h2 id="newsletter-title">
           Get Travel Deals
         </h2>
 
         <p className="readable-text">
-          Receive travel discounts and
-          seasonal offers by email.
+          Receive destination updates,
+          travel inspiration, and seasonal
+          discounts directly to your email.
         </p>
 
         <label htmlFor="email">
-          Email Address
+          Email address
         </label>
 
         <input
           id="email"
           type="email"
-          placeholder="Enter email"
+          placeholder="Enter your email"
           className="email"
+          aria-label="Email address"
         />
 
-        <button>
+        <button type="button">
           Subscribe
         </button>
       </section>
